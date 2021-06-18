@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=\, initial-scale=1.0">
+        <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Goodreads(clone)</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Books</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Authors</a>
+                    </li>
+                    </ul>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="btn btn-outline-primary">Sign In</button>
+                    <button class="btn btn-primary" type="submit">Sign Up</button>
+                </div>
+            </div>
+        </nav>
+        <div id="welcome">
+            <h1> Let's Change The World With Books</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Error possimus quidem mollitia.</p>
+        </div>
+        <div class="custom-shape-divider-bottom-1623998187">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div id="main_section">
+            <div id="about">
+                <h1 style="width: 250px;margin: 0; padding-bottom: 20px;border-bottom: 5px solid dodgerblue; border-bottom-right-radius: 5px;">About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam maxime hic, nisi delectus quam nesciunt nostrum esse maiores vel culpa praesentium, recusandae sapiente cum alias. Itaque molestias est ad reprehenderit.Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam maxime hic, nisi delectus quam nesciunt nostrum esse maiores vel culpa praesentium, recusandae sapiente cum alias. Itaque molestias est ad reprehenderit.Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Magnam maxime hic, nisi delectus quam nesciunt nostrum esse maiores vel culpa praesentium, recusandae sapiente cum alias. Itaque molestias est ad reprehenderit.</p>
+            </div>
+            <div id="details">
+                <h1 style="width: 350px;margin: 0; padding-bottom: 20px;border-bottom: 5px solid dodgerblue; border-bottom-right-radius: 5px;">What can you do with us ?</h1>
+                <div>
+                    <div>
+                        <h3>Deciding what to read next?</h3>
+                        <p>You’re in the right place. Tell us what titles or genres you’ve enjoyed in the past, and we’ll give you surprisingly insightful recommendations.</p>
+                    </div>
+                    <div>
+                        <h3>What are your friends reading?</h3>
+                        <p>Chances are your friends are discussing their favorite (and least favorite) books on Goodreads.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="redirect">
+                <p>So, let’s check out the <a href="">Books</a> in the absence of losing time</p>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script src="js/main.js"></script>
+        <script>
+            function checkTokenExist(){
+                const authBlock = document.getElementsByClassName('button-group');
+                if(window.localStorage.token){
+                    if(authBlock.classList.contains('logged-in')){
+                        authBlock.classList.add('logged-in');
+                        authBlock.innerHTML = `
+                            <button class="btn btn-outline-primary" onclick="addBookForm()">Add Book</button>
+                            <button class="btn btn-primary" onclick="addAuthorForm()">Add Author</button>`
+                    }else{
+                        authBlock.classList.remove('logged-in');
+                        authBlock.innerHTML = `
+                            <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
+                            <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`
+                    }
+                }else{
+                    window.location.pathname = './sign-up.html';
+                    authBlock.classList.remove('logged-in');
+                    authBlock.innerHTML = `
+                        <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
+                        <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`;
+                }
+            }
+            checkTokenExist();
+            setInterval(checkTokenExist, 2000)
+        </script>
+    </body>
+</html>
