@@ -1,0 +1,25 @@
+#books{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: justify;
+    justify-content: center;
+}
+#logo{
+    width: 100vw;
+}
+.card{
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    width: 400px;
+    border:1px solid grey;
+    border-radius: 5px;
+    margin: 10px;
+}
+.card-img-top{
+    width: 120px;
+    height: 100%;
+}
+a{
+    text-decoration: none;
+}

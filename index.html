@@ -21,17 +21,18 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Books</a>
+                        <a class="nav-link" href="books.html">Books</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Authors</a>
                     </li>
                     </ul>
+                    <div class="button-group">
+                        <button type="button" class="btn btn-outline-primary">Sign In</button>
+                        <button class="btn btn-primary" type="submit">Sign Up</button>
+                    </div>
                 </div>
-                <div class="button-group">
-                    <button type="button" class="btn btn-outline-primary">Sign In</button>
-                    <button class="btn btn-primary" type="submit">Sign Up</button>
-                </div>
+                
             </div>
         </nav>
         <div id="welcome">
@@ -63,36 +64,36 @@
                 </div>
             </div>
             <div id="redirect">
-                <p>So, let’s check out the <a href="">Books</a> in the absence of losing time</p>
+                <p>So, let’s check out the <a href="books.html">Books</a> in the absence of losing time</p>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
         <script>
-            function checkTokenExist(){
-                const authBlock = document.getElementsByClassName('button-group');
-                if(window.localStorage.token){
-                    if(authBlock.classList.contains('logged-in')){
-                        authBlock.classList.add('logged-in');
-                        authBlock.innerHTML = `
-                            <button class="btn btn-outline-primary" onclick="addBookForm()">Add Book</button>
-                            <button class="btn btn-primary" onclick="addAuthorForm()">Add Author</button>`
-                    }else{
-                        authBlock.classList.remove('logged-in');
-                        authBlock.innerHTML = `
-                            <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
-                            <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`
-                    }
-                }else{
-                    window.location.pathname = './sign-up.html';
-                    authBlock.classList.remove('logged-in');
-                    authBlock.innerHTML = `
-                        <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
-                        <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`;
-                }
-            }
-            checkTokenExist();
-            setInterval(checkTokenExist, 2000)
+            // function checkTokenExist(){
+            //     const authBlock = document.getElementsByClassName('button-group');
+            //     if(window.localStorage.token){
+            //         if(authBlock.classList.contains('logged-in')){
+            //             authBlock.classList.add('logged-in');
+            //             authBlock.innerHTML = `
+            //                 <button class="btn btn-outline-primary" onclick="addBookForm()">Add Book</button>
+            //                 <button class="btn btn-primary" onclick="addAuthorForm()">Add Author</button>`
+            //         }else{
+            //             authBlock.classList.remove('logged-in');
+            //             authBlock.innerHTML = `
+            //                 <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
+            //                 <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`
+            //         }
+            //     }else{
+            //         window.location.pathname = './sign-up.html';
+            //         authBlock.classList.remove('logged-in');
+            //         authBlock.innerHTML = `
+            //             <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
+            //             <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`;
+            //     }
+            // }
+            // checkTokenExist();
+            // setInterval(checkTokenExist, 2000)
         </script>
     </body>
 </html>

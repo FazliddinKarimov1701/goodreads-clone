@@ -76,3 +76,6 @@ body{
     margin-bottom: 10px;
     font-size: 20px;
 }
+.container-fluid{
+    justify-content: space-around;
+}
