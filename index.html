@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=\, initial-scale=1.0">
         <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.17/sweetalert2.min.css" integrity="sha512-fZ1HwrDVLoUUUDGK7gZdHJ4TIMQ9KnleLU/Jgf98v1nGz9umOciIbF3zs3R5stCIY/MVMqReXgUGnxOoWUdZDQ==" crossorigin="anonymous" referrerpolicy="no-referrer"
+        />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
     </head>
@@ -27,9 +29,9 @@
                         <a class="nav-link" href="authors.html">Authors</a>
                     </li>
                     </ul>
-                    <div class="button-group">
-                        <button type="button" class="btn btn-outline-primary">Sign In</button>
-                        <button class="btn btn-primary" type="submit">Sign Up</button>
+                    <div id="auth_block" class="button-group">
+                        <button type="button" class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
+                        <button class="btn btn-primary" type="submit" onclick="addSignUpForm()">Sign Up</button>
                     </div>
                 </div>
                 
@@ -67,33 +69,12 @@
                 <p>So, let’s check out the <a href="books.html">Books</a> in the absence of losing time</p>
             </div>
         </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="js/main.js"></script>
         <script>
-            // function checkTokenExist(){
-            //     const authBlock = document.getElementsByClassName('button-group');
-            //     if(window.localStorage.token){
-            //         if(authBlock.classList.contains('logged-in')){
-            //             authBlock.classList.add('logged-in');
-            //             authBlock.innerHTML = `
-            //                 <button class="btn btn-outline-primary" onclick="addBookForm()">Add Book</button>
-            //                 <button class="btn btn-primary" onclick="addAuthorForm()">Add Author</button>`
-            //         }else{
-            //             authBlock.classList.remove('logged-in');
-            //             authBlock.innerHTML = `
-            //                 <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
-            //                 <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`
-            //         }
-            //     }else{
-            //         window.location.pathname = './sign-up.html';
-            //         authBlock.classList.remove('logged-in');
-            //         authBlock.innerHTML = `
-            //             <button class="btn btn-outline-primary" onclick="addLoginForm()">Sign In</button>
-            //             <button class="btn btn-primary" onclick="addSignUpForm()">Sign Up</button>`;
-            //     }
-            // }
-            // checkTokenExist();
-            // setInterval(checkTokenExist, 2000)
+            checkTokenExist();
+            setInterval(checkTokenExist, 2000)
         </script>
     </body>
 </html>
