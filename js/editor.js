@@ -18,19 +18,29 @@ function displayBook(data = [], element){
                 <img src="${imageLink}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <label for="card-title">Title :</label>
-                    <input class="card-title" type="text" value="${title}" disabled>
+                    <input class="card-title inpVal" type="text" value="${title}" readonly>
                     <label>Country :</label>
-                    <input type="text" value="${country}" disabled>
+                    <input class="inpVal" type="text" value="${country}" readonly>
                     <label>Price :</label>
-                    <input type="text" value="${price}" disabled>
+                    <input class="inpVal" type="text" value="${price}" readonly>
                     <label>Year :</label>
-                    <input type="text" value="${year}" disabled>
+                    <input class="inpVal" type="text" value="${year}" readonly>
                     <label>Pages :</label>
-                    <input type="text" value="${pages}" disabled>
+                    <input class="inpVal" type="text" value="${pages}" readonly>
                 </div>
             </div>`;
 }
 
-var btn = document.getElementById("editorBtn");
-var input = document.querySelectorAll('input');
-console.log(input)
+
+
+function enableDisable(){
+    var inputs = document.querySelectorAll("input");
+    inputs.forEach(item => {
+        if(item.readOnly === true){
+            item.readOnly = false;
+        }else{
+            item.readOnly = true;
+        }
+    })
+}
+
