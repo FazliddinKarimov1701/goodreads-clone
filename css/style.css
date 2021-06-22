@@ -79,3 +79,15 @@ body{
 .container-fluid{
     justify-content: space-around;
 }
+.book_card{
+    display: flex;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px;
+}
+.card-img-top{
+    width:400px;
+}

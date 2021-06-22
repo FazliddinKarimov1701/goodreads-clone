@@ -8,15 +8,19 @@ fetch('http://book.alitechbot.uz/api/books')
 
         let li = ``;
         json.forEach(item => {
-            const {_id,imageLink = defaultImg,title,author,year} = item;
+            const {_id,imageLink = defaultImg,title,year} = item;
             li += `
-                <div class="card">
-                    <img src="${imageLink}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h4 class="card-title">${title}</h4>
-                        <p>${year}</p>
-                    </div>
-                </div> `;
+                <a href="./book_details.html?id=${_id}">
+                    <div class="card">
+                        <img src="${imageLink}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <input type="text" value="${title}" disabled>
+                            <input type="text" value="${year}" disabled>
+                        </div>
+                    </div> 
+                </a>`;
             books.innerHTML = li;
         });
     })
+
+

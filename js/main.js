@@ -161,7 +161,7 @@ function createAuthor() {
 
 function checkTokenExist(redirectToSignUpPage = false) {
     var authBlock = document.getElementById('auth_block')
-    console.log('Loading auth checker')
+    // console.log('Loading auth checker')
     if (window.localStorage.token) {
         if (!authBlock.classList.contains('logged-in')) {
             authBlock.classList.add('logged-in');
